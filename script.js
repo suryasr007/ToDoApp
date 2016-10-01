@@ -7,8 +7,8 @@ var toDoList={
 
     addToDos: function(todoText){  //Pusing objects instead of text to the array
         this.todos.push({
-            todoText=todoText,     // Yes, we can declare 
-            completed = false
+            todoText:todoText,     // Yes, we can declare 
+            completed: false
         });
         this.displayToDos();
     },
@@ -23,4 +23,10 @@ var toDoList={
         this.todos.splice(position, 1);
         this.displayToDos();
     },
+    
+    toggleToDos:function(position){
+        var todo = this.todos[position];
+        todo.completed=!todo.completed;
+        this.displayToDos();
+    }
 }
