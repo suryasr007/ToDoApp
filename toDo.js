@@ -1,12 +1,15 @@
 var toDoList={
-    todos:["item1","item2","item3","item4"],
+    todos:[],
     
     displayToDos: function(){
         console.log("my ToDo list", this.todos);
     },
 
-    addToDos: function(todo){
-        this.todos.pust(todo);
+    addToDos: function(todoText){  //Pusing objects instead of text to the array
+        this.todos.push({
+            todoText=todoText,     // Yes, we can declare 
+            completed = false
+        });
         this.displayToDos();
     },
 
