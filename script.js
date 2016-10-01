@@ -13,8 +13,9 @@ var toDoList={
         this.displayToDos();
     },
 
-    changeToDos:function(position,newValue){
-        this.todos[position]=newValue;
+    changeToDos:function(position,newtodoText){
+        //this.todos[position]=newValue;
+        this.todos[position].todoText=newtodoText;
         this.displayToDos();
     },
     
