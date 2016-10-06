@@ -7,7 +7,7 @@
             else{
                 console.log("my ToDo list:");
                 for(var i=0;i<this.todos.length;i++){
-                    if(this.todos[i].completed=== true){
+                    if(this.todos[i].completed=== true){ // verying whether EACH todo is completed or not
                         console.log('(x) ',this.todos[i].todoText);
                 }
                     else
