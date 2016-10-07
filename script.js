@@ -39,5 +39,30 @@
             var todo = this.todos[position];
             todo.completed=!todo.completed;
             this.displayToDos();
+        },
+        
+        toggleAll:function(){
+        
+            completedToDos = 0;
+            totalToDos=this.todos.length;
+            //check whether each todo is completed
+            for(var i=0;i<totalToDos;i++){
+                if(this.todos[i].completed === true)
+                    completedToDos++;
+                
+            }
+            // check whether all todos are completed
+            if(completedToDos==totalToDos){     // if completed make everything false
+                for(var i=0;i<totalToDos;i++)
+                    this.todos[i].completed=false;
+            }
+            else{
+                for(var i=0;i<totalToDos;i++)
+                    this.todos[i].completed=true;
+            }
+            
+            this.displayToDos();
+        
         }
+        
     }
