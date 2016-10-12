@@ -66,3 +66,20 @@
         }
         
     }
+    
+    var displayToDoButton =document.getElementById('displayToDoButton'); //Assigning display button event to variable
+
+    displayToDoButton.addEventListener('click',function(){  //function to listen event
+       toDoList.displayToDos(); 
+    });
+
+    var toggleAllButton =document.getElementById('toggleAllButton'); //Assigning toggle all button to a variable
+
+    toggleAllButton.addEventListener('click',function(){
+        toDoList.toggleAll();
+    });
+
+
+
+
+
