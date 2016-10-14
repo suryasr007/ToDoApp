@@ -6,8 +6,17 @@
     
 </head>
 <body>
-    <button id="displayToDoButton">Display ToDo</button>
-    <button id="toggleAllButton">Toggel All</button>
+    <button onclick="handlers.displayToDosButton()">Display ToDo</button>
+    <button onclick="handlers.toggleAllButton()">Toggel All</button>
+    
+    <input type="text" id="valueEnteredInTextBox">
+    <button onclick="handlers.addToDoButton()">addToDo</button>
+    
+    <div>
+        <input type="number" id="toDoChangePosition">
+        <input type="text" id="toDoChangeText">
+        <button onclick="handlers.toDoChangeButton()">Change To Do</button>
+    </div>
 
     <script src="script.js" type="text/javascript"></script>
 </body>

@@ -18,7 +18,7 @@
         },
 
         addToDos: function(todoText){  //Pusing objects instead of text to the array
-            debugger;
+            //debugger;
             this.todos.push({
                 todoText:todoText,     // Yes, we can declare 
                 completed: false
@@ -67,21 +67,29 @@
         
         }
         
-    }
+    };
     
-    var displayToDoButton =document.getElementById('displayToDoButton'); //Assigning display button event to variable
-
-    displayToDoButton.addEventListener('click',function(){  //function to listen event
-       toDoList.displayToDos(); 
-    });
-
-    var toggleAllButton =document.getElementById('toggleAllButton'); //Assigning toggle all button to a variable
-
-    toggleAllButton.addEventListener('click',function(){
+   
+var handlers={
+    
+    displayToDosButton : function(){
+        toDoList.displayToDos();
+    },
+    
+    toggleAllButton : function(){
         toDoList.toggleAll();
-    });
-
-
-
-
+    },
+    
+    addToDoButton :function(){
+        var addToDoValue = document.getElementById('valueEnteredInTextBox');
+        toDoList.addToDos(addToDoValue.value);
+        addToDoValue.value = '';
+    },
+    
+    toDoChangeButton : function(){
+        var changeToDoPosition = document.getElementById('toDoChangePosition');
+        var changeToDoValue = document.getElementById('toDoChangeText');
+        toDoList.changeToDos(toDoChangePosition.valueAsNumber,toDoChangeText.value);
+    }
+};
 
