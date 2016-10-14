@@ -2,6 +2,7 @@
         todos:[],
 
         displayToDos: function(){
+            //debugger; it is used to debug the javascript code in the browser.
             if(this.todos.length === 0)
                 console.log("Your To-do list is empty");
             else{
@@ -17,6 +18,7 @@
         },
 
         addToDos: function(todoText){  //Pusing objects instead of text to the array
+            debugger;
             this.todos.push({
                 todoText:todoText,     // Yes, we can declare 
                 completed: false
