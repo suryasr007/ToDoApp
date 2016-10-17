@@ -90,6 +90,17 @@ var handlers={
         var changeToDoPosition = document.getElementById('toDoChangePosition');
         var changeToDoValue = document.getElementById('toDoChangeText');
         toDoList.changeToDos(toDoChangePosition.valueAsNumber,toDoChangeText.value);
+    },
+    
+    toDoDeleteButton : function(){
+        var deleteToDo =document.getElementById('deletePosition');
+        toDoList.deleteToDos(deleteToDo.valueAsNumber);
+        deleteToDo ='';
+    },
+    toDoToggelButton : function(){
+        var toogleToDo = document.getElementById('togglePosition');
+        toDoList.toggleToDos(toogleToDo.valueAsNumber);
+        toogleToDo='';
     }
 };
 
