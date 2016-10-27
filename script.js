@@ -96,10 +96,10 @@ var handlers={
         view.displayToDos();
     },
     
-    toDoDeleteButton : function(){
-        var deleteToDo =document.getElementById('deletePosition');
-        toDoList.deleteToDos(deleteToDo.valueAsNumber);
-        deleteToDo.value ='';
+    toDoDeleteButton : function(position){
+     //   var deleteToDo =document.getElementById('deletePosition');
+        toDoList.deleteToDos(position);
+      //  deleteToDo.value ='';
         view.displayToDos();
     },
     toDoToggelButton : function(){
@@ -125,14 +125,33 @@ var view ={  // to display the todos a li elements.
              else{
                 toDosWithCompletion ='( ) ' + toDo.todoText;
              }
-            
+             toDoLi.id=i;
              toDoLi.textContent=toDosWithCompletion;
+             toDoLi.appendChild(this.createDeleteButtons());
              toDoUl.appendChild(toDoLi);
         }
+    },
+    createDeleteButtons : function(){
+        var deleteButton =document.createElement('button');
+        deleteButton.textContent='Delete';
+        deleteButton.className='deleteButton';
+        return deleteButton;
+    },
+    setUpEventListeners : function(){
+            var toDosUl = document.querySelector('ul');
+            toDosUl.addEventListener('click',function(event){
+            var elementClicked = event.target;
+            if(elementClicked.className === 'deleteButton' ){
+                handlers.toDoDeleteButton(parseInt(elementClicked.parentNode.id));
+            }
+        });
     }
+    
 };
 
 
+
+view.setUpEventListeners();
 
 
 
